@@ -1,0 +1,27 @@
+:root {
+    // Primary Colors
+    --clr-very-dark-magenta: hsl(300, 43%, 22%);
+    --clr-soft-pink: hsl(333, 80%, 67%);
+    // Neutral Colors
+    --clr-dark-grayish-magenta: hsl(303, 10%, 53%);
+    --clr-light-grayish-magenta: hsl(300, 24%, 96%);
+    --clr-white: hsl(0, 0%, 100%);
+    // Font Family
+    --ff-league-spartan: 'League Spartan', sans-serif;
+    // Font Size
+    --fs-13px: 0.8125rem;
+    --fs-15px: 0.9625rem;
+    --fs-32px: 2rem;
+    // Font Weight
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --br: .5rem;
+
+    @media (min-width: 50em) {
+        :root {
+            --fs-32px: 3rem;
+        }
+    }
+}

@@ -1,0 +1,225 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+main {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 50em) {
+  main {
+    grid-template-columns: 1fr 1.5fr;
+    text-align: left;
+  }
+  .intro {
+    grid-column: 1/2;
+  }
+  .ratings {
+    grid-column: 2/3;
+  }
+  .quotes {
+    grid-column: 1/-1;
+  }
+}
+body {
+  font-family: var(--ff-league-spartan);
+  font-size: var(--fs-13px);
+  padding-top: 5rem;
+  text-align: center;
+  background-image: url(/images/bg-pattern-top-desktop.svg), url(/images/bg-pattern-bottom-desktop.svg);
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  background-size: 50% 25%;
+}
+
+h1 {
+  font-size: var(--fs-32px);
+  color: var(--clr-very-dark-magenta);
+  line-height: 1;
+  max-width: 12ch;
+  margin-bottom: 1em;
+  font-weight: var(--fw-700);
+}
+@media (max-width: 50em) {
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sub-title {
+  font-size: var(--fs-15px);
+}
+
+:root {
+  --clr-very-dark-magenta: hsl(300, 43%, 22%);
+  --clr-soft-pink: hsl(333, 80%, 67%);
+  --clr-dark-grayish-magenta: hsl(303, 10%, 53%);
+  --clr-light-grayish-magenta: hsl(300, 24%, 96%);
+  --clr-white: hsl(0, 0%, 100%);
+  --ff-league-spartan: "League Spartan", sans-serif;
+  --fs-13px: 0.8125rem;
+  --fs-15px: 0.9625rem;
+  --fs-32px: 2rem;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  --br: .5rem;
+}
+@media (min-width: 50em) {
+  :root :root {
+    --fs-32px: 3rem;
+  }
+}
+
+.container {
+  max-width: 70rem;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+
+.flow-content > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  display: flex;
+}
+@media (min-width: 50em) {
+  .split {
+    flex-direction: row;
+  }
+}
+
+.a-center {
+  align-content: center;
+}
+
+.ratings li {
+  color: var(--clr-very-dark-magenta);
+  background: var(--clr-light-grayish-magenta);
+  font-weight: 800;
+  padding: 0.75rem 2rem;
+  border-radius: var(--br);
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ratings li::before {
+  content: "";
+  width: 100px;
+  height: 1rem;
+  margin: 0 auto;
+  display: block;
+  background-image: url(/images/icon-star.svg);
+  margin-bottom: 0.5rem;
+  background-repeat: space;
+}
+@media (min-width: 50em) {
+  .ratings li {
+    display: flex;
+    align-content: center;
+  }
+  .ratings li::before {
+    margin: 0 1.5rem 0 0;
+  }
+  .ratings li:first-of-type {
+    transform: translate(-3rem);
+  }
+  .ratings li:last-of-type {
+    transform: translate(3rem);
+  }
+}
+
+.quotes {
+  --spacer: 2rem;
+}
+.quotes li:nth-child(2) {
+  transform: translateY(3rem);
+}
+.quotes li:nth-child(3) {
+  transform: translateY(6rem);
+}
+.quotes blockquote {
+  background: var(--clr-very-dark-magenta);
+  color: var(--clr-light-grayish-magenta);
+  text-align: left;
+  border-radius: var(--br);
+  padding: 2rem;
+  max-width: 25rem;
+  margin: 0 auto;
+  height: 100%;
+}
+.quotes img {
+  border-radius: 50%;
+  margin-right: var(--spacer);
+  width: 3rem;
+}
+.quotes .name {
+  font-weight: 800;
+}
+.quotes .status {
+  color: var(--clr-soft-pink);
+}
+.quotes .quote {
+  margin-top: var(--spacer);
+}/*# sourceMappingURL=style.css.map */
